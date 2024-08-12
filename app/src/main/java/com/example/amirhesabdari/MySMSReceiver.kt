@@ -6,9 +6,10 @@ import android.content.Context
 import android.content.Intent
 import android.provider.Telephony
 import android.util.Log
+import com.example.amirhesabdari.viewModels.SmsViewModel
 
 class MySMSReceiver : BroadcastReceiver() {
-    val smsViewModel =SmsViewModel()
+    private val smsViewModel = SmsViewModel()
     companion object {
         private val TAG by lazy { MySMSReceiver::class.java.simpleName }
     }

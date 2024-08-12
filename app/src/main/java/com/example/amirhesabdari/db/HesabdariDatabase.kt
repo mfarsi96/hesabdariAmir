@@ -27,7 +27,6 @@ abstract class HesabdariDatabase : RoomDatabase() {
         fun getInstance(context: Context): HesabdariDatabase {
             if (instance != null) return instance!!
 
-//            if (instance == null) {
             synchronized(this){
                 instance = Room.databaseBuilder(
                     context,
@@ -36,7 +35,7 @@ abstract class HesabdariDatabase : RoomDatabase() {
             }
 
 
-//            }
+
             return instance!!
         }
     }

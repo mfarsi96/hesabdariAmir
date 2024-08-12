@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.amirhesabdari.db.models.Account
 import com.example.amirhesabdari.db.repository.AccountRepository
 
-class AccountViewModel(application: Application) : AndroidViewModel(application) {
+class DBViewModel(application: Application) : AndroidViewModel(application) {
 
     private var repository: AccountRepository = AccountRepository(application)
     private var allAccountList = repository.getAllAccount()
@@ -33,9 +33,9 @@ class AccountViewModel(application: Application) : AndroidViewModel(application)
 }
 class AccountViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(AccountViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(DBViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return AccountViewModel(application) as T
+            return DBViewModel(application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
